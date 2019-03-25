@@ -1,14 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package inventory.model;
 
-/**
- *
- * @author m108491
- */
-public class InHouse {
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
+public class InHouse extends Part {
     
+    private IntegerProperty machineId = new SimpleIntegerProperty();
+
+    public int getMachineId() {
+        return machineId.get();
+    }
+
+    public void setMachineId(int machineId) {
+        this.machineId.set(machineId);
+    }
+    
+    public IntegerProperty machineIdProperty(){
+        return this.machineId;
+    }
 }

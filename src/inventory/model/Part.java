@@ -2,16 +2,19 @@ package inventory.model;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public abstract class Part {
     
-    private IntegerProperty partId;
-    private StringProperty name;
-    private DoubleProperty price;
-    private IntegerProperty inStock;
-    private IntegerProperty min;
-    private IntegerProperty max;
+    private IntegerProperty partId = new SimpleIntegerProperty();
+    private StringProperty name = new SimpleStringProperty();
+    private DoubleProperty price = new SimpleDoubleProperty();
+    private IntegerProperty inStock = new SimpleIntegerProperty();
+    private IntegerProperty min = new SimpleIntegerProperty();
+    private IntegerProperty max = new SimpleIntegerProperty();
 
     public int getPartId() {
         return partId.get();

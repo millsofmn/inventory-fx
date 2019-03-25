@@ -1,21 +1,22 @@
 package inventory.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Product {
 
-    private IntegerProperty productId;
-    private StringProperty name;
-    private DoubleProperty price;
-    private IntegerProperty inStock;
-    private IntegerProperty min;
-    private IntegerProperty max;
+    private IntegerProperty productId = new SimpleIntegerProperty();
+    private StringProperty name = new SimpleStringProperty();
+    private DoubleProperty price = new SimpleDoubleProperty();
+    private IntegerProperty inStock = new SimpleIntegerProperty();
+    private IntegerProperty min = new SimpleIntegerProperty();
+    private IntegerProperty max = new SimpleIntegerProperty();
     private ObservableList<Part> associatedParts = FXCollections.observableArrayList();
 
     public int getProductId() {

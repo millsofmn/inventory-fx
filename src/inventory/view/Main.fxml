@@ -10,14 +10,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.MainScreenController">
+<AnchorPane id="AnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.view.MainController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" text="Inventory Management System" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="15.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="962.0" layoutY="425.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Exit" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+      <Button layoutX="962.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="30.0" prefWidth="75.0" text="Exit" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
          <children>
             <AnchorPane style="-fx-border-color: grey;" HBox.hgrow="ALWAYS">
@@ -33,17 +33,17 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView layoutY="36.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                  <TableView fx:id="partsTable" layoutY="36.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
                     <columns>
-                      <TableColumn minWidth="-1.0" prefWidth="125.0" text="Part Id" />
-                      <TableColumn minWidth="-1.0" prefWidth="125.0" text="Part Name" />
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Inventory Level" />
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Price/Cost per Unit" />
+                      <TableColumn fx:id="partId" minWidth="-1.0" prefWidth="125.0" text="Part Id" />
+                      <TableColumn fx:id="partName" minWidth="-1.0" prefWidth="125.0" text="Part Name" />
+                        <TableColumn fx:id="partQty" minWidth="-1.0" prefWidth="125.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPrice" minWidth="-1.0" prefWidth="125.0" text="Price/Cost per Unit" />
                     </columns>
                   </TableView>
                   <HBox layoutX="281.0" layoutY="268.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#handleAddPart" prefHeight="30.0" prefWidth="75.0" text="Add" />
                         <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Modify" />
                         <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Delete" />
                      </children>
