@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -32,17 +33,20 @@
             <children>
                 <HBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="415.0" spacing="40.0" GridPane.columnSpan="2147483647">
                     <children>
-                        <Label text="Add Part">
+                        <Label fx:id="screenLabel" text="Add Part">
                             <font>
                                 <Font name="System Bold" size="24.0" />
                             </font>
                         </Label>
-                        <RadioButton mnemonicParsing="false" text="In-House">
+                        <RadioButton fx:id="inHouseBtn" mnemonicParsing="false" onAction="#handleInHouseButton" text="In-House">
                             <font>
                                 <Font size="14.0" />
                             </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="partType" />
+                     </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Outsourced">
+                        <RadioButton fx:id="outsourcedBtn" mnemonicParsing="false" onAction="#handleOutsourcedButton" text="Outsourced" toggleGroup="$partType">
                             <font>
                                 <Font size="14.0" />
                             </font>
@@ -95,7 +99,7 @@
                         <Insets left="60.0" />
                     </padding>
                 </Label>
-                <Label layoutX="10.0" layoutY="334.0" text="Company Name" GridPane.rowIndex="6">
+                <Label fx:id="manufactureLabel" layoutX="10.0" layoutY="334.0" text="Company Name" GridPane.rowIndex="6">
                     <font>
                         <Font size="14.0" />
                     </font>
@@ -103,7 +107,12 @@
                         <Insets left="60.0" />
                     </padding>
                 </Label>
-                <TextField maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="partIdTxtFld" disable="true" editable="false" layoutX="214.0" layoutY="384.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </TextField>
+                <TextField fx:id="partNameTxtFld" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Part Name" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -111,29 +120,19 @@
                         <Insets />
                     </GridPane.margin>
                 </TextField>
-                <TextField layoutX="214.0" layoutY="140.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <TextField fx:id="partQtyTxtFld" layoutX="214.0" layoutY="140.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Inv" GridPane.columnIndex="1" GridPane.rowIndex="3">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
                 </TextField>
-                <TextField layoutX="214.0" layoutY="201.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </TextField>
-                <TextField layoutX="214.0" layoutY="262.0" maxWidth="200.0" prefHeight="40.0" prefWidth="119.0" promptText="Comp Nm" GridPane.columnIndex="1" GridPane.rowIndex="6">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </TextField>
-                <TextField disable="true" editable="false" layoutX="214.0" layoutY="384.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="partPriceTxtFld" layoutX="214.0" layoutY="201.0" maxWidth="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="4">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
                 </TextField>
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                     <children>
-                        <TextField maxWidth="200.0" prefHeight="40.0" prefWidth="80.0" promptText="Max">
+                        <TextField fx:id="partMaxTxtFld" maxWidth="200.0" prefHeight="40.0" prefWidth="80.0" promptText="Max">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
@@ -143,16 +142,21 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <TextField layoutX="10.0" layoutY="10.0" maxWidth="200.0" prefHeight="40.0" prefWidth="80.0" promptText="Min">
+                        <TextField fx:id="partMinTxtFld" layoutX="10.0" layoutY="10.0" maxWidth="200.0" prefHeight="40.0" prefWidth="80.0" promptText="Min">
                             <opaqueInsets>
                                 <Insets />
                             </opaqueInsets>
                         </TextField>
                     </children>
                 </HBox>
+                <TextField fx:id="manufactureTxtFld" layoutX="214.0" layoutY="262.0" maxWidth="200.0" prefHeight="40.0" prefWidth="119.0" promptText="Comp Nm" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </TextField>
                 <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Save" />
+                        <Button mnemonicParsing="false" onAction="#handleSaveButton" prefHeight="30.0" prefWidth="75.0" text="Save" />
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleCancelButton" prefHeight="30.0" prefWidth="75.0" text="Cancel" />
                     </children>
                 </HBox>

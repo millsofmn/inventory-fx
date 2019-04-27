@@ -24,8 +24,8 @@
                <children>
                   <HBox alignment="TOP_RIGHT" layoutX="203.0" spacing="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Search" />
-                        <TextField promptText="Search Part" />
+                        <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSearchPartButton" prefHeight="30.0" prefWidth="75.0" text="Search" />
+                        <TextField fx:id="searchPartsTxtFld" promptText="Search Part" />
                      </children>
                   </HBox>
                   <Label layoutX="38.0" layoutY="6.0" text="Parts" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -35,17 +35,17 @@
                   </Label>
                   <TableView fx:id="partsTable" layoutY="36.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
                     <columns>
-                      <TableColumn fx:id="partId" minWidth="-1.0" prefWidth="125.0" text="Part Id" />
-                      <TableColumn fx:id="partName" minWidth="-1.0" prefWidth="125.0" text="Part Name" />
-                        <TableColumn fx:id="partQty" minWidth="-1.0" prefWidth="125.0" text="Inventory Level" />
+                      <TableColumn fx:id="partId" minWidth="-1.0" prefWidth="118.0" text="Part Id" />
+                      <TableColumn fx:id="partName" minWidth="-1.0" prefWidth="118.0" text="Part Name" />
+                        <TableColumn fx:id="partQty" minWidth="-1.0" prefWidth="118.0" text="Inventory Level" />
                         <TableColumn fx:id="partPrice" minWidth="-1.0" prefWidth="125.0" text="Price/Cost per Unit" />
                     </columns>
                   </TableView>
                   <HBox layoutX="281.0" layoutY="268.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#handleAddPart" prefHeight="30.0" prefWidth="75.0" text="Add" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Modify" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#handleAddPartButton" prefHeight="30.0" prefWidth="75.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#handleModifyPartButton" prefHeight="30.0" prefWidth="75.0" text="Modify" />
+                        <Button mnemonicParsing="false" onAction="#handleDeletePartButton" prefHeight="30.0" prefWidth="75.0" text="Delete" />
                      </children>
                   </HBox>
                </children>
@@ -57,8 +57,8 @@
                <children>
                   <HBox alignment="TOP_RIGHT" layoutX="203.0" spacing="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Search" />
-                        <TextField promptText="Search Product" />
+                        <Button mnemonicParsing="false" onAction="#handleSearchProductButton" prefHeight="30.0" prefWidth="75.0" text="Search" />
+                        <TextField fx:id="searchProductsTxtFld" promptText="Search Product" />
                      </children>
                   </HBox>
                   <Label layoutX="38.0" layoutY="6.0" text="Products" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -66,19 +66,19 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TableView layoutY="36.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+                  <TableView fx:id="productsTable" layoutY="36.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
                      <columns>
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Product Id" />
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Product Name" />
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Inventory Level" />
-                        <TableColumn minWidth="-1.0" prefWidth="125.0" text="Price per Unit" />
+                        <TableColumn fx:id="productId" minWidth="-1.0" prefWidth="119.0" text="Product Id" />
+                        <TableColumn fx:id="productName" minWidth="-1.0" prefWidth="119.0" text="Product Name" />
+                        <TableColumn fx:id="productQty" minWidth="-1.0" prefWidth="119.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPrice" minWidth="-1.0" prefWidth="119.0" text="Price per Unit" />
                      </columns>
                   </TableView>
                   <HBox layoutX="281.0" layoutY="268.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Add" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Modify" />
-                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#handleAddProductButton" prefHeight="30.0" prefWidth="75.0" text="Add" />
+                        <Button mnemonicParsing="false" onAction="#handleModifyProductButton" prefHeight="30.0" prefWidth="75.0" text="Modify" />
+                        <Button mnemonicParsing="false" onAction="#handleDeleteProductButton" prefHeight="30.0" prefWidth="75.0" text="Delete" />
                      </children>
                   </HBox>
                </children>
