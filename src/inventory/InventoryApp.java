@@ -38,7 +38,7 @@ public class InventoryApp extends Application {
         
         InHouse wheelNut = new InHouse();
         wheelNut.setName("Wheel Nut");
-        wheelNut.setInStock(10);
+        wheelNut.setInStock(9);
         wheelNut.setMachineId(123456789);
         wheelNut.setMax(10);
         wheelNut.setMin(1);
@@ -48,7 +48,7 @@ public class InventoryApp extends Application {
         
         InHouse wheelShaft = new InHouse();
         wheelShaft.setName("Wheel Shaft");
-        wheelShaft.setInStock(10);
+        wheelShaft.setInStock(8);
         wheelShaft.setMachineId(1256789);
         wheelShaft.setMax(10);
         wheelShaft.setMin(1);
@@ -58,7 +58,7 @@ public class InventoryApp extends Application {
         
         Outsourced grease = new Outsourced();
         grease.setName("Grease");
-        grease.setInStock(10);
+        grease.setInStock(7);
         grease.setCompanyName("Millers");
         grease.setMax(10);
         grease.setMin(1);
@@ -78,7 +78,7 @@ public class InventoryApp extends Application {
         
         Outsourced spring = new Outsourced();
         spring.setName("Spring");
-        spring.setInStock(10);
+        spring.setInStock(6);
         spring.setCompanyName("Millers");
         spring.setMax(10);
         spring.setMin(1);

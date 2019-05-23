@@ -107,6 +107,8 @@ public class ProductsController implements Initializable {
         searchResultPartQty.setCellValueFactory(data -> new SimpleIntegerProperty(data.getValue().getInStock()).asObject());
         searchResultPartPrice.setCellValueFactory(data -> new SimpleDoubleProperty(data.getValue().getPrice()).asObject());
         
+        searchResultsTable.setItems(FXCollections.observableArrayList(InventoryApp.inventoryRepository.getAllParts()));
+        
         if(MainController.getModifyProductId() != null) {
             Product product = InventoryApp.inventoryRepository.lookupProduct(MainController.getModifyProductId());
             logger.info("Found Product " + product.getName() + " " + product.getProductId());

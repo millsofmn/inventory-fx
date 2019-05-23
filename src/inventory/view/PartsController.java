@@ -211,6 +211,9 @@ public class PartsController implements Initializable {
             part = new InHouse();
             ((InHouse)part).setMachineId(Integer.valueOf(manufactureTxtFld.getText()));
         } else {
+            if(manufactureTxtFld.getText().isEmpty()){
+                throw new ValidationException(MAN_OUTSOURCE_TXT + " must be filled in");
+            }
             part = new Outsourced();
             ((Outsourced)part).setCompanyName(manufactureTxtFld.getText());
         }
